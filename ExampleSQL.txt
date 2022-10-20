@@ -1,0 +1,27 @@
+select distinct cat.catalog_name, prprev.header, chap.description, concat(prod.price, ' ', prod.price_discount, ' ', prod.price_promocode) as prices,
+pic.picture_src, pic.is_preview
+from products prod
+inner join prprev_products_identity id1 on id1.id_product = prod.id_product
+inner join products_preview prprev on prprev.id_product_preview = id1.id_product_preview
+inner join pictures_products_identity id2 on id2.id_product = prod.id_product
+inner join catalog_chapters_prprev_identity id3 on id3.id_product_preview = prprev.id_product_preview
+inner join chapters chap on chap.id_chapter = id3.id_chapter
+inner join pictures pic on pic.id_picture = id2.id_picture
+inner join catalog cat on cat.id_catalog = id3.id_catalog
+inner join pictures_prprev_identity id4 on id4.id_product_preview = prprev.id_product_preview
+where prod.id_product = 3 and cat.catalog_name='Новинки' and pic.is_preview=true;
+
+
+
+select distinct cat.catalog_name, prprev.header, chap.description, concat(prod.price, ' ', prod.price_discount, ' ', prod.price_promocode) as prices,
+pic.picture_src, pic.is_preview
+from products prod
+inner join prprev_products_identity id1 on id1.id_product = prod.id_product
+inner join products_preview prprev on prprev.id_product_preview = id1.id_product_preview
+inner join pictures_products_identity id2 on id2.id_product = prod.id_product
+inner join catalog_chapters_prprev_identity id3 on id3.id_product_preview = prprev.id_product_preview
+inner join chapters chap on chap.id_chapter = id3.id_chapter
+inner join pictures pic on pic.id_picture = id2.id_picture
+inner join catalog cat on cat.id_catalog = id3.id_catalog
+inner join pictures_prprev_identity id4 on id4.id_product_preview = prprev.id_product_preview
+where prod.id_product = 1 and cat.catalog_name='Одежда' and pic.is_preview=true;
