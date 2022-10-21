@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Окт 21 2022 г., 12:12
+-- Время создания: Окт 21 2022 г., 12:31
 -- Версия сервера: 8.0.30
 -- Версия PHP: 7.2.34
 
@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- База данных: `fordump`
 --
+CREATE DATABASE IF NOT EXISTS `fordump` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci;
+USE `fordump`;
 
 -- --------------------------------------------------------
 
